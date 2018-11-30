@@ -1,0 +1,12 @@
+<status 
+    [count] = "count">
+
+</status>
+<div *ngFor="let item of items">
+    <todo-item 
+       [item]="item"
+       (onPriorityUp) = "priorityIncrease(item)"
+       (onPriorityDown) = "priorityDecrease(item)"
+       (onToggleDone) = "toggleDone(item)" >
+    </todo-item>
+</div>

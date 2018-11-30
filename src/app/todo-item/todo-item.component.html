@@ -1,0 +1,18 @@
+<div [class.high]="item.priority>3" [class.done]="item.done">
+    <div class="label">{{item.label}}</div>
+    <div>
+        Priority: {{item.priority}} &nbsp;
+        <button type="button" class="btn btn-outline-secondary" (click)="priorityIncreaseOnClick()">&uarr;</button>
+        &nbsp; &nbsp; &nbsp;
+        <button type="button" class="btn btn-outline-secondary" (click)="priorityDecreaseOnClick()">&darr;</button>
+    </div>
+    <br/>
+    <div *ngIf="item.done">
+        <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDoneOnClick()">Mark Undone</button>
+    </div>
+    <div *ngIf="!item.done">
+            <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDoneOnClick()">Mark Done</button>
+        </div>
+    
+    <hr/>
+</div>

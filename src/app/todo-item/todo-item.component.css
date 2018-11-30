@@ -1,0 +1,13 @@
+.high {
+    background-color: red;
+}
+.label {
+    font-style: italic;
+}
+.done {
+    background-color: pink;
+}
+div {
+    margin: auto;
+    width: 50%;
+}
