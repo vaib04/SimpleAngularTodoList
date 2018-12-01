@@ -2,4 +2,5 @@
 <h2>Todo List</h2>
 
 <router-outlet></router-outlet>
-<app-todo-list></app-todo-list>
+&nbsp;&nbsp;<button class="btn btn-primary btn-sm" (click)="showTodoList = !showTodoList">Show Todo List</button>
+<app-todo-list *ngIf="showTodoList"></app-todo-list>
