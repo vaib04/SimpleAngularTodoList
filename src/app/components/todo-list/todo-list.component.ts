@@ -1,5 +1,5 @@
 import { ListItemsService } from './../../services/list-items.service';
-import { Count } from '../../model/count';
+//import { Count } from '../../model/count';
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../../model/item';
 
@@ -11,26 +11,29 @@ import { Item } from '../../model/item';
 })
 export class TodoListComponent implements OnInit {
   items: Item[];
-  count: Count;
+  //count: Count;
   constructor(private listItemsService: ListItemsService) { }
 
   ngOnInit() {
-    this.items = this.listItemsService.getTodoItems();
-    this.count = this.listItemsService.getCount();
+    this.listItemsService.getTodoItems().subscribe(
+      res => this.items = res.json(),
+      err => console.log(err)
+    );
+    //this.count = this.listItemsService.getCount();
   }
 
   
 
   priorityIncrease(item: Item) {
-    this.listItemsService.priorityIncrease(item);
+    this.listItemsService.priorityIncrease(item).subscribe();
   }
   priorityDecrease(item: Item) {
-    this.listItemsService.priorityDecrease(item);
+    this.listItemsService.priorityDecrease(item).subscribe();
   }
   toggleDone(item: Item) {
-    this.listItemsService.toggleDone(item);
+    this.listItemsService.toggleDone(item).subscribe();
   }
   addItem(item: Item) {
-    this.listItemsService.addItem(item);
+    this.listItemsService.addItem(item).subscribe(res => this.items.push(res.json()));
   }
 }
