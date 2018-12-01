@@ -1,6 +1,6 @@
-import { Count } from './../model/count';
+import { Count } from '../../model/count';
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from '../model/item';
+
 
 @Component({
   selector: 'status',
