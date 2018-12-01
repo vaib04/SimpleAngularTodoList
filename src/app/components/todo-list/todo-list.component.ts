@@ -30,5 +30,7 @@ export class TodoListComponent implements OnInit {
   toggleDone(item: Item) {
     this.listItemsService.toggleDone(item);
   }
-
+  addItem(item: Item) {
+    this.listItemsService.addItem(item);
+  }
 }

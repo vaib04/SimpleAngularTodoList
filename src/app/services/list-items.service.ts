@@ -33,6 +33,22 @@ export class ListItemsService {
         false
       )
     ];
+    // this.count = new Count(0,0);
+    // for(let x of this.items) {
+    //     if(x.done) {
+    //       this.count.totalDone++;
+    //     } else {
+    //       this.count.totalUndone++;
+    //     }
+    // }
+    // this.count.total=this.count.totalUndone+this.count.totalDone;
+  }
+
+  getTodoItems() : Item[] {
+    return this.items;
+  }
+
+  getCount() : Count {
     this.count = new Count(0,0);
     for(let x of this.items) {
         if(x.done) {
@@ -42,13 +58,6 @@ export class ListItemsService {
         }
     }
     this.count.total=this.count.totalUndone+this.count.totalDone;
-  }
-
-  getTodoItems() : Item[] {
-    return this.items;
-  }
-
-  getCount() : Count {
     return this.count;
   }
 
@@ -76,5 +85,14 @@ export class ListItemsService {
       this.count.total=this.count.totalUndone+this.count.totalDone;
     }
   }
+  addItem(item: Item) {
+    if(item.done) {
+      this.count.totalDone++;
+    } else  {
+      this.count.totalUndone++;
+    }
+    this.count.total++;
+    this.items.unshift(item);
+  } 
 
 }

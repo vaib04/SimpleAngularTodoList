@@ -1,0 +1,21 @@
+<form #addTaskForm="ngForm" class="form-horizontal"  (ngSubmit)="saveBtnClickHandler();addTaskForm.reset()" >
+  <div class="form-group">
+    <label>Task: </label>
+    <input name="task" class="form-control" type="text" [(ngModel)] = "newTask.label" 
+    placeholder="Enter task details" #task="ngModel" required/>
+ 
+  </div>
+  <div class="form-group">
+    <label>Select priority: </label>
+    <select name="priority" class="form-control" [(ngModel)] = "newTask.priority" #prio="ngModel" required>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-sm" [disabled]="addTaskForm.invalid">Add Task</button>
+  </div>
+</form>
