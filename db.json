@@ -17,6 +17,18 @@
       "priority": 4,
       "done": false,
       "id": 3
+    },
+    {
+      "label": "score",
+      "priority": 2,
+      "done": false,
+      "id": 4
+    },
+    {
+      "label": "Do laundry",
+      "priority": 2,
+      "done": false,
+      "id": 5
     }
   ]
 }
