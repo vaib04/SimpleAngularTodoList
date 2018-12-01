@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "label": "Go for a trip to Hyderabad",
+      "priority": 3,
+      "done": false
+    },
+    {
+      "label": "Call mom",
+      "priority": 5,
+      "done": true,
+      "id": 2
+    },
+    {
+      "label": "Complete assignments",
+      "priority": 4,
+      "done": false,
+      "id": 3
+    }
+  ]
+}
